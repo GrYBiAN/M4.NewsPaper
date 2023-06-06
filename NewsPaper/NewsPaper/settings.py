@@ -160,3 +160,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+APSCHEDULER_RUN_NOW_TIMEOUT = 25
+
+#Celery
+CELERY_BROKER_URL = f"redis://default:Qvuny7XSSEy13N7gfWgx1ILQunUvtku1@redis-17270.c85.us-east-1-2.ec2.cloud.redislabs.com:17270"
+CELERY_RESULT_BACKEND = f"redis://default:Qvuny7XSSEy13N7gfWgx1ILQunUvtku1@redis-17270.c85.us-east-1-2.ec2.cloud.redislabs.com:17270"
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

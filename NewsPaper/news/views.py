@@ -1,7 +1,6 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
-from .models import Post
 from .filters import PostFilter
 from django_filters.views import FilterView
 from .forms import NewsEditForm, NewsAddForm, ArticleAddForm
@@ -9,9 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
-from .models import Subscriber, Category
-
-
+from .models import Post, Subscriber, Category
 
 
 class PostsList(ListView):
